@@ -6,27 +6,27 @@
   
   body {
       /* more on this crazy alphanumerical value in a minute! */
-      color: #39a6b2;
+      color: #101f20;
       font-family: Helvetica, Arial, sans-serif;
     }
   
     /* apply styles to <header> */
   header {
     padding: 20px 35px;
-    background-color: #39a6b2;
+    background-color: #72a053;
   }
   
   header h1 {
     font-weight: bold;
     font-size: 36px;
-    color: #fce138;
+    color: #181f16;
     margin: 0;
     display: inline;
   }
   
   header a {
     text-decoration: none;
-    color: #fce138;
+    color: #181f16;
   }
   
   header nav {
@@ -45,14 +45,14 @@
   }
   
   footer {
-    background: #fce138;
+    background: #070603;
     width: 100%;
     padding: 40px 35px;
   }
   
   footer h2 {
     display: inline;
-    color: #024e76;
+    color: #72a053;
     font-size: 30px;
     margin: 0;
   }
@@ -70,3 +70,57 @@
   section {
     padding: 60px;
   }
+
+  /* Hero Style Start */
+
+.hero {
+  background-image: url("../images/music.jpg");
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  }
+  
+  
+  .hero-form {
+    border: 2px solid #72a053;
+    background-color: black;
+    padding: 20px;
+    width: 500px;
+    color: green;
+    position: absolute;
+    bottom: 120px;
+    right: 100px;
+  }
+  
+  .hero-form h3 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .hero-form p {
+    margin: 5px 0 15px 0;
+  }
+  
+  .form-input {
+    border: 1px solid #72a053;
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: #72a053;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .hero-form label {
+    margin: 0 5px;
+  }
+  
+  .hero-form button {
+    color: #fce138;
+    background-color: #024e76;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  /* HERO STYLES END */
