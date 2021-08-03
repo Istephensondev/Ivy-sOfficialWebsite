@@ -16,6 +16,8 @@
     background-color: #72a053;
     justify-content: space-between;
     flex-wrap: wrap;
+    display: flex;
+    align-items: center;
   }
   
   header h1 {
@@ -98,7 +100,9 @@
     border: 2px solid #72a053;
     background-color: black;
     padding: 20px;
-    width: 500px;
+    width: 40%;
+    /* width: 500px: */
+    margin: 3.5%;
     color: green;
     position: absolute;
     bottom: 120px;
@@ -295,8 +299,10 @@
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
   header {
-    padding-bottom: 0;
+    padding: 10px 20px;
+    height: 120px;
     justify-content: center;
+   
   }
 
   header h1 {
@@ -311,7 +317,9 @@
   }
 
   header nav ul li a {
-    font-size: 20px;
+    margin: 0px 15px;
+    font-size: 15px;
+    padding: 5px 5px;
   }
 
   footer h2, footer div {
