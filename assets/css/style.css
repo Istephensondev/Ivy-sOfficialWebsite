@@ -14,6 +14,8 @@
   header {
     padding: 20px 35px;
     background-color: #72a053;
+    justify-content: space-between;
+    flex-wrap: wrap;ß
   }
   
   header h1 {
@@ -125,3 +127,16 @@
     font-size: 16px;
   }
   /* HERO STYLES END */
+
+  .intro {
+    text-align: center;
+  }
+
+  .intro h2 {
+  font-size: 55px;
+  color: #024e76;
+  margin-bottom: 35px;
+  padding: 0 100px 20px 100px;
+  border-bottom: 3px solid;
+  border-color: #fce138;
+}
