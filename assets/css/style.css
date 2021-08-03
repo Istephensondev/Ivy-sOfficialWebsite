@@ -327,14 +327,10 @@
     width: 100%;
   }
 
-  .hero-cta, .hero-form {
-    width: 100%;
-  }
-  
-  .hero-cta {
-    text-align: center;
-  }
+ .hero-form {
+   width: 70%;
 
+}
   .section-title {
     width: 80%;
   }
