@@ -18,6 +18,9 @@
     flex-wrap: wrap;
     display: flex;
     align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
   }
   
   header h1 {
@@ -26,6 +29,7 @@
     color: #181f16;
     margin: 0;
     display: inline;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
   header a {
@@ -51,6 +55,7 @@
     margin: 0 30px;
     font-weight: lighter;
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
   
   
@@ -107,6 +112,8 @@
     position: absolute;
     bottom: 120px;
     right: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
   }
   
   .hero-form h3 {
@@ -126,6 +133,7 @@
     color: #72a053;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
   }
   
   .hero-form label {
@@ -277,6 +285,7 @@
   width: 100%;
   margin-bottom: 15px;
   margin-top: 5px;
+  border-radius: 10px;
 }
 
 .contact-form button {
@@ -287,6 +296,7 @@
   text-align: center;
   padding: 15px 0;
   font-size: 16px;
+  border-radius: 10;
 }
 
 .contact-info a {
@@ -379,6 +389,7 @@
 
   .hero-form button {
     width: 100%;
+    border-radius: 10px;
   }
 
   .section-title {
