@@ -6,7 +6,7 @@
   
   body {
       /* more on this crazy alphanumerical value in a minute! */
-      color: #101f20;
+      color: #1c2010;
       font-family: Helvetica, Arial, sans-serif;
     }
   
@@ -26,7 +26,7 @@
   header h1 {
     font-weight: bold;
     font-size: 36px;
-    color: #181f16;
+    color: #5a6120;
     margin: 0;
     display: inline;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -56,6 +56,10 @@
     font-weight: lighter;
     font-size: 1.55vw;
     text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: #000000;
+    color: #72a053;
+    border-radius: 15px;
+    text-shadow: none;
   }
   
   
@@ -134,6 +138,12 @@
     width: 100%;
     margin-bottom: 15px;
     border-radius: 10px;
+    background-color: rgba(255,255,255, 0.75);
+  }
+
+  .form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
   }
   
   .hero-form label {
@@ -141,12 +151,18 @@
   }
   
   .hero-form button {
-    color: #fce138;
+    color: #302f27;
     background-color: #024e76;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
   }
+
+  .hero-form button:hover {
+    background-color: #39a6b2;  
+  }
+
+
   /* HERO STYLES END */
 
   /* SECTION TITLE STYLES START */
@@ -286,6 +302,7 @@
   margin-bottom: 15px;
   margin-top: 5px;
   border-radius: 10px;
+  background-color: rgba(255,255,255, 1);
 }
 
 .contact-form button {
@@ -299,8 +316,36 @@
   border-radius: 10;
 }
 
+.contact-form button:hover {
+  color: #302f27;
+  background: #39a6b2;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+  background-color: rgba(255,255,255, 1);
+  outline: none;
+}
+
 .contact-info a {
   color: #fce138;
+}
+
+.checkbox-wrapper label, .radio-wrapper label {
+  position: relative;
+  left: 10px;
+  margin: 10px;
+  line-height: 1.6;
+}
+
+.checkbox-wrapper label::before, .radio-wrapper label::before {
+  content: "";
+  height: 20px;
+  width: 20px;
+  background: rgba(255, 255, 255, 0.75);  
+  border: 1px solid #024e76;  
+  position: absolute;
+  top: -4px;
+  left: -30px;
 }
 
 
@@ -312,6 +357,7 @@
     padding: 10px 20px;
     height: 120px;
     justify-content: center;
+    position: relative;
    
   }
 
