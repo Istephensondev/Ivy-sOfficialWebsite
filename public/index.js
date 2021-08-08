@@ -7,10 +7,11 @@ const formEvent = form.addEventListener("submit", (event) => {
 });
 
 const sendMail = (mail) => {
-  fetch("https://nodemailer-vic-lo.herokuapp.com/send", {
+  fetch("https://ivy-stephenson.herokuapp.com/send", {
     method: "post",
     body: mail,
   }).then((response) => {
     return response.json();
   });
 };
+
