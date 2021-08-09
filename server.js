@@ -18,8 +18,8 @@ function sendMessage() {
     try {
       // mail options
       const mailOptions = {
-        from: "MySite@mysite.com",
-        to: "my_gmail@gmail.com",
+        from: "ocskier@gmail.com",
+        to: "philosivy@gmail.com",
         subject: "Hey there!",
         text: "Whoa! It freakin works now."
       };
@@ -48,9 +48,10 @@ function sendMessage() {
         user: 'philosivy@gmail.com', //set these in your .env file
         clientId: "769553003033-k0iu17efpqg0s53tj7g9f90sa7feg84j.apps.googleusercontent.com",
         clientSecret: "IkKZtK0jWAoG95K4RPMJhOiM",
-        refreshToken: "1//04ABlATmHy9m4CgYIARAAGAQSNwF-L9IrCZHABlyFneJnZnNwkA2I0IwFyzimO1TtPs4eJXvC-WSCHGYG3kkmfiReCaRJfPlBkLk", 
-        accessToken: "ya29.a0ARrdaM88mluuTYf9QVRS8GN-to50S3h5AMF9QWw99jz2MLnzDgt6oXNq0Hk_e2lYZSTGAiGI-cLdbvexhiqFtqdNgCfQ8RzTYFU4JNjq_sEPVV1Z4TDSw42w09ZADXHu8uSIZDXGPXaF69fZ1xpnLwapA4gh",
-        expires: 3599
+        refreshToken: "1//04MKO_U0bfnKsCgYIARAAGAQSNwF-L9IrimbNwJWYY2U-mdqbXiDM13FtmIV9KMOSYCGd7qzgMOEwvp5WgyBq8aW_l52OYQPcMVY", 
+        accessToken: "ya29.a0ARrdaM9V1vRBDWJ5FnZ-V1V86R1g-aMdCrn3WMGHbsGRpjRslJNIeTN78_oRIELbYD5afUMeDKdl4mqz8C3AjuWUbjmNOyOMb4MAO01pGqvlhXVtQlKsZrAI98Y1kPb9qit1WNJSgGpymhKpxoJm47syMJn8",
+        // expires: 3599,
+        scope:"https://mail.google.com/"
     }
   });
 
