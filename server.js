@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
+const { getMaxListeners } = require("node:process");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 5000;
@@ -13,53 +14,53 @@ app.use(cors({ origin: "*" }));
 
 app.use("/public", express.static(process.cwd() + "/public")); //make public static
 
-const transporter = nodemailer.createTransport({
-  service: "gmail.com",
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASS,
-  },
-});
-
-// verify connection configuration
-transporter.verify(function (error, success) {
-  if (error) {
-    console.log(error);
-  } else {
-    console.log("Server is ready to take our messages");
+function sendMessage() {
+    try {
+      // mail options
+      const mailOptions = {
+        from: "MySite@mysite.com",
+        to: "my_gmail@gmail.com",
+        subject: "Hey there!",
+        text: "Whoa! It freakin works now."
+      };
+      // here we actually send it
+      transporter.sendMail(mailOptions, function(err, info) {
+        if (err) {
+          console.log("Error sending message: " + err);
+        } else {
+          // no errors, it worked
+          console.log("Message sent succesfully.");
+        }
+      });
+    } catch (error) {
+      console.log("Other error sending message: " + error);
+    }
   }
-});
 
-app.post("/send", (req, res) => {
-  let form = new multiparty.Form();
-  let data = {};
-  form.parse(req, function (err, fields) {
-    console.log(fields);
-    Object.keys(fields).forEach(function (property) {
-      data[property] = fields[property].toString();
-    });
-    console.log(data);
-    const mail = {
-      sender: `${data.name} <${data.email}>`,
-      to: process.env.EMAIL, // receiver email,
-      subject: data.subject,
-      text: `${data.name} <${data.email}> \n${data.message}`,
-    };
-    transporter.sendMail(mail, (err, data) => {
-      if (err) {
-        console.log(err);
-        res.status(500).send("Something went wrong.");
-      } else {
-        res.status(200).send("Email successfully sent to recipient!");
-      }
-    });
+  // thats the key part, without all these it didn't work for me
+  let transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true,
+    service: 'gmail',
+    auth: {
+          type: "OAUTH2",
+          user: 'philosivy@gmail.com', //set these in your .env file
+          clientId: 769553003033-k0iu17efpqg0s53tj7g9f90sa7feg84j.apps.googleusercontent.com,
+          clientSecret: IkKZtK0jWAoG95K4RPMJhOiM,
+          refreshToken: 1//04ABlATmHy9m4CgYIARAAGAQSNwF-L9IrCZHABlyFneJnZnNwkA2I0IwFyzimO1TtPs4eJXvC-WSCHGYG3kkmfiReCaRJfPlBkLk, 
+          accessToken: ya29.a0ARrdaM88mluuTYf9QVRS8GN-to50S3h5AMF9QWw99jz2MLnzDgt6oXNq0Hk_e2lYZSTGAiGI-cLdbvexhiqFtqdNgCfQ8RzTYFU4JNjq_sEPVV1Z4TDSw42w09ZADXHu8uSIZDXGPXaF69fZ1xpnLwapA4gh,
+          expires: 3599
+    }
   });
-});
 
-//Index page (static HTML)
-app.route("/").get(function (req, res) {
-  res.sendFile(process.cwd() + "/public/index.html");
-});
+  // invoke sending function
+  sendMessage();
+
+// //Index page (static HTML)
+// app.route("/").get(function (req, res) {
+//   res.sendFile(process.cwd() + "/public/index.html");
+// });
 
 /*************************************************/
 // Express server listening...
